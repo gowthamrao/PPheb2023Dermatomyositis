@@ -1,0 +1,127 @@
+{
+  "ExpressionLimit": {"Type": "First"},
+  "CollapseSettings": {
+    "CollapseType": "ERA",
+    "EraPad": 0
+  },
+  "CensorWindow": {},
+  "ConceptSets": [{
+    "expression": {"items": [
+      {
+        "isExcluded": false,
+        "concept": {
+          "INVALID_REASON_CAPTION": "Valid",
+          "CONCEPT_ID": 80182,
+          "STANDARD_CONCEPT": "S",
+          "CONCEPT_CODE": "396230008",
+          "VOCABULARY_ID": "SNOMED",
+          "CONCEPT_NAME": "Dermatomyositis",
+          "DOMAIN_ID": "Condition",
+          "STANDARD_CONCEPT_CAPTION": "Standard",
+          "CONCEPT_CLASS_ID": "Clinical Finding",
+          "INVALID_REASON": "V"
+        },
+        "includeMapped": false,
+        "includeDescendants": false
+      },
+      {
+        "isExcluded": false,
+        "concept": {
+          "INVALID_REASON_CAPTION": "Valid",
+          "CONCEPT_ID": 4270868,
+          "STANDARD_CONCEPT": "S",
+          "CONCEPT_CODE": "402425006",
+          "VOCABULARY_ID": "SNOMED",
+          "CONCEPT_NAME": "Adult onset dermatomyositis",
+          "DOMAIN_ID": "Condition",
+          "STANDARD_CONCEPT_CAPTION": "Standard",
+          "CONCEPT_CLASS_ID": "Clinical Finding",
+          "INVALID_REASON": "V"
+        },
+        "includeMapped": false,
+        "includeDescendants": false
+      },
+      {
+        "isExcluded": false,
+        "concept": {
+          "INVALID_REASON_CAPTION": "Valid",
+          "CONCEPT_ID": 4081250,
+          "STANDARD_CONCEPT": "S",
+          "CONCEPT_CODE": "238935002",
+          "VOCABULARY_ID": "SNOMED",
+          "CONCEPT_NAME": "Dermatomyositis sine myositis",
+          "DOMAIN_ID": "Condition",
+          "STANDARD_CONCEPT_CAPTION": "Standard",
+          "CONCEPT_CLASS_ID": "Clinical Finding",
+          "INVALID_REASON": "V"
+        },
+        "includeMapped": false,
+        "includeDescendants": false
+      },
+      {
+        "isExcluded": false,
+        "concept": {
+          "INVALID_REASON_CAPTION": "Valid",
+          "CONCEPT_ID": 4344161,
+          "STANDARD_CONCEPT": "S",
+          "CONCEPT_CODE": "239901009",
+          "VOCABULARY_ID": "SNOMED",
+          "CONCEPT_NAME": "Dermatomyositis with malignant disease",
+          "DOMAIN_ID": "Condition",
+          "STANDARD_CONCEPT_CAPTION": "Standard",
+          "CONCEPT_CLASS_ID": "Clinical Finding",
+          "INVALID_REASON": "V"
+        },
+        "includeMapped": false,
+        "includeDescendants": false
+      }
+    ]},
+    "name": "DM",
+    "id": 0
+  }],
+  "cdmVersionRange": ">=5.0.0",
+  "CensoringCriteria": [],
+  "QualifiedLimit": {"Type": "First"},
+  "InclusionRules": [{
+    "expression": {
+      "CriteriaList": [{
+        "RestrictVisit": false,
+        "StartWindow": {
+          "UseEventEnd": false,
+          "Start": {"Coeff": -1},
+          "End": {
+            "Days": 365,
+            "Coeff": 1
+          },
+          "UseIndexEnd": false
+        },
+        "IgnoreObservationPeriod": true,
+        "Criteria": {"ConditionOccurrence": {
+          "ConditionTypeExclude": false,
+          "CodesetId": 0
+        }},
+        "Occurrence": {
+          "Type": 2,
+          "IsDistinct": false,
+          "Count": 2
+        }
+      }],
+      "Type": "ALL",
+      "DemographicCriteriaList": [],
+      "Groups": []
+    },
+    "name": "2 Occurrences",
+    "description": "Patient must have 2 dx of DM within a year of each other"
+  }],
+  "PrimaryCriteria": {
+    "CriteriaList": [{"ConditionOccurrence": {
+      "ConditionTypeExclude": false,
+      "CodesetId": 0
+    }}],
+    "PrimaryCriteriaLimit": {"Type": "First"},
+    "ObservationWindow": {
+      "PostDays": 0,
+      "PriorDays": 0
+    }
+  }
+}
