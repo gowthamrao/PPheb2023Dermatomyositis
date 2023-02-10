@@ -2,7 +2,7 @@
   "ExpressionLimit": {"Type": "First"},
   "CollapseSettings": {
     "CollapseType": "ERA",
-    "EraPad": 0
+    "EraPad": 365
   },
   "CensorWindow": {},
   "ConceptSets": [
@@ -2405,6 +2405,10 @@
       "id": 2
     }
   ],
+  "EndStrategy": {"DateOffset": {
+    "DateField": "StartDate",
+    "Offset": 730
+  }},
   "cdmVersionRange": ">=5.0.0",
   "CensoringCriteria": [],
   "QualifiedLimit": {"Type": "First"},
@@ -2415,43 +2419,12 @@
           "RestrictVisit": false,
           "StartWindow": {
             "UseEventEnd": false,
-            "Start": {"Coeff": -1},
-            "End": {
-              "Days": 365,
-              "Coeff": 1
-            },
-            "UseIndexEnd": false
-          },
-          "IgnoreObservationPeriod": true,
-          "Criteria": {"ConditionOccurrence": {
-            "ConditionTypeExclude": false,
-            "CodesetId": 0
-          }},
-          "Occurrence": {
-            "Type": 2,
-            "IsDistinct": false,
-            "Count": 2
-          }
-        }],
-        "Type": "ALL",
-        "DemographicCriteriaList": [],
-        "Groups": []
-      },
-      "name": "2 Occurrences",
-      "description": "Patient must have 2 dx of DM within a year of each other"
-    },
-    {
-      "expression": {
-        "CriteriaList": [{
-          "RestrictVisit": false,
-          "StartWindow": {
-            "UseEventEnd": false,
             "Start": {
-              "Days": 180,
+              "Days": 365,
               "Coeff": -1
             },
             "End": {
-              "Days": 180,
+              "Days": 365,
               "Coeff": 1
             },
             "UseIndexEnd": false
@@ -2476,31 +2449,127 @@
     },
     {
       "expression": {
-        "CriteriaList": [{
-          "RestrictVisit": false,
-          "StartWindow": {
-            "UseEventEnd": false,
-            "Start": {"Coeff": -1},
-            "End": {"Coeff": 1},
-            "UseIndexEnd": false
+        "CriteriaList": [
+          {
+            "RestrictVisit": false,
+            "StartWindow": {
+              "UseEventEnd": false,
+              "Start": {
+                "Days": 365,
+                "Coeff": -1
+              },
+              "End": {
+                "Days": 0,
+                "Coeff": 1
+              },
+              "UseIndexEnd": false
+            },
+            "IgnoreObservationPeriod": true,
+            "Criteria": {"Measurement": {
+              "MeasurementTypeExclude": false,
+              "CodesetId": 2
+            }},
+            "Occurrence": {
+              "Type": 2,
+              "IsDistinct": false,
+              "Count": 1
+            }
           },
-          "IgnoreObservationPeriod": false,
-          "Criteria": {"Measurement": {
-            "MeasurementTypeExclude": false,
-            "CodesetId": 2
-          }},
-          "Occurrence": {
-            "Type": 2,
-            "IsDistinct": false,
-            "Count": 1
+          {
+            "RestrictVisit": false,
+            "StartWindow": {
+              "UseEventEnd": false,
+              "Start": {
+                "Days": 365,
+                "Coeff": -1
+              },
+              "End": {
+                "Days": 365,
+                "Coeff": 1
+              },
+              "UseIndexEnd": false
+            },
+            "IgnoreObservationPeriod": true,
+            "Criteria": {"Measurement": {
+              "MeasurementTypeExclude": false,
+              "MeasurementType": [
+                {
+                  "INVALID_REASON_CAPTION": "Unknown",
+                  "CONCEPT_ID": 9191,
+                  "STANDARD_CONCEPT": null,
+                  "CONCEPT_CODE": "10828004",
+                  "VOCABULARY_ID": "SNOMED",
+                  "CONCEPT_NAME": "Positive",
+                  "DOMAIN_ID": "Meas Value",
+                  "STANDARD_CONCEPT_CAPTION": "Unknown",
+                  "CONCEPT_CLASS_ID": null,
+                  "INVALID_REASON": null
+                },
+                {
+                  "INVALID_REASON_CAPTION": "Unknown",
+                  "CONCEPT_ID": 4155101,
+                  "STANDARD_CONCEPT": null,
+                  "CONCEPT_CODE": "272069004",
+                  "VOCABULARY_ID": "SNOMED",
+                  "CONCEPT_NAME": "Positive integer",
+                  "DOMAIN_ID": "Meas Value",
+                  "STANDARD_CONCEPT_CAPTION": "Unknown",
+                  "CONCEPT_CLASS_ID": null,
+                  "INVALID_REASON": null
+                },
+                {
+                  "INVALID_REASON_CAPTION": "Unknown",
+                  "CONCEPT_ID": 36308065,
+                  "STANDARD_CONCEPT": null,
+                  "CONCEPT_CODE": "LA11154-4",
+                  "VOCABULARY_ID": "LOINC",
+                  "CONCEPT_NAME": "Ordered - Positive",
+                  "DOMAIN_ID": "Meas Value",
+                  "STANDARD_CONCEPT_CAPTION": "Unknown",
+                  "CONCEPT_CLASS_ID": null,
+                  "INVALID_REASON": null
+                },
+                {
+                  "INVALID_REASON_CAPTION": "Unknown",
+                  "CONCEPT_ID": 45879438,
+                  "STANDARD_CONCEPT": null,
+                  "CONCEPT_CODE": "LA9633-4",
+                  "VOCABULARY_ID": "LOINC",
+                  "CONCEPT_NAME": "Present",
+                  "DOMAIN_ID": "Meas Value",
+                  "STANDARD_CONCEPT_CAPTION": "Unknown",
+                  "CONCEPT_CLASS_ID": null,
+                  "INVALID_REASON": null
+                },
+                {
+                  "INVALID_REASON_CAPTION": "Unknown",
+                  "CONCEPT_ID": 4181412,
+                  "STANDARD_CONCEPT": null,
+                  "CONCEPT_CODE": "52101004",
+                  "VOCABULARY_ID": "SNOMED",
+                  "CONCEPT_NAME": "Present",
+                  "DOMAIN_ID": "Meas Value",
+                  "STANDARD_CONCEPT_CAPTION": "Unknown",
+                  "CONCEPT_CLASS_ID": null,
+                  "INVALID_REASON": null
+                }
+              ],
+              "CodesetId": 2
+            }},
+            "Occurrence": {
+              "Type": 2,
+              "IsDistinct": false,
+              "Count": 1
+            }
           }
-        }],
-        "Type": "ALL",
+        ],
+        "Type": "AT_LEAST",
         "DemographicCriteriaList": [],
-        "Groups": []
+        "Groups": [],
+        "Count": 1
       },
-      "name": "Performed Antibody test",
-      "description": ""
+      "name": "Antibody test",
+      "description": "positive antibody test of particular antigen"
     },
     {
       "expression": {
@@ -2508,53 +2577,34 @@
           "RestrictVisit": false,
           "StartWindow": {
             "UseEventEnd": false,
-            "Start": {"Coeff": -1},
-            "End": {"Coeff": 1},
+            "Start": {
+              "Days": 365,
+              "Coeff": -1
+            },
+            "End": {
+              "Days": 0,
+              "Coeff": 1
+            },
             "UseIndexEnd": false
           },
-          "IgnoreObservationPeriod": false,
-          "Criteria": {"Measurement": {
-            "MeasurementTypeExclude": false,
-            "ValueAsConcept": [
-              {
-                "INVALID_REASON_CAPTION": "Unknown",
-                "CONCEPT_ID": 9191,
-                "STANDARD_CONCEPT": null,
-                "CONCEPT_CODE": "10828004",
-                "VOCABULARY_ID": "SNOMED",
-                "CONCEPT_NAME": "Positive",
-                "DOMAIN_ID": "Meas Value",
-                "STANDARD_CONCEPT_CAPTION": "Unknown",
-                "CONCEPT_CLASS_ID": null,
-                "INVALID_REASON": null
-              },
-              {
-                "INVALID_REASON_CAPTION": "Unknown",
-                "CONCEPT_ID": 4126681,
-                "STANDARD_CONCEPT": null,
-                "CONCEPT_CODE": "260373001",
-                "VOCABULARY_ID": "SNOMED",
-                "CONCEPT_NAME": "Detected",
-                "DOMAIN_ID": "Meas Value",
-                "STANDARD_CONCEPT_CAPTION": "Unknown",
-                "CONCEPT_CLASS_ID": null,
-                "INVALID_REASON": null
-              }
-            ],
-            "CodesetId": 2
+          "IgnoreObservationPeriod": true,
+          "Criteria": {"ConditionOccurrence": {
+            "ConditionTypeExclude": false,
+            "CodesetId": 0
           }},
           "Occurrence": {
             "Type": 2,
+            "CountColumn": "START_DATE",
             "IsDistinct": false,
-            "Count": 1
+            "Count": 2
           }
         }],
         "Type": "ALL",
         "DemographicCriteriaList": [],
         "Groups": []
       },
-      "name": "Antibody test result is positive",
-      "description": "positive antibody test of particular antigen"
+      "name": "2x DM Diagnosis",
+      "description": "Patient must have 2 diagnoses of dermatomyositis within a year of each other"
     }
   ],
   "PrimaryCriteria": {

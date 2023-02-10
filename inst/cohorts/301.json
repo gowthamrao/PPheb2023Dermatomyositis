@@ -77,7 +77,7 @@
           "includeDescendants": false
         }
       ]},
-      "name": "DM",
+      "name": "Dermatomyositis",
       "id": 0
     },
     {
@@ -2487,34 +2487,6 @@
           "IgnoreObservationPeriod": false,
           "Criteria": {"Measurement": {
             "MeasurementTypeExclude": false,
-            "CodesetId": 2
-          }},
-          "Occurrence": {
-            "Type": 2,
-            "IsDistinct": false,
-            "Count": 1
-          }
-        }],
-        "Type": "ALL",
-        "DemographicCriteriaList": [],
-        "Groups": []
-      },
-      "name": "Performed Antibody test",
-      "description": ""
-    },
-    {
-      "expression": {
-        "CriteriaList": [{
-          "RestrictVisit": false,
-          "StartWindow": {
-            "UseEventEnd": false,
-            "Start": {"Coeff": -1},
-            "End": {"Coeff": 1},
-            "UseIndexEnd": false
-          },
-          "IgnoreObservationPeriod": false,
-          "Criteria": {"Measurement": {
-            "MeasurementTypeExclude": false,
             "ValueAsConcept": [
               {
                 "INVALID_REASON_CAPTION": "Unknown",
@@ -2553,7 +2525,7 @@
         "DemographicCriteriaList": [],
         "Groups": []
       },
-      "name": "Antibody test result is positive",
+      "name": "Antibody test",
       "description": "positive antibody test of particular antigen"
     }
   ],
