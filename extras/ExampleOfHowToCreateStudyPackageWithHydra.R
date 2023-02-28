@@ -28,7 +28,7 @@ ROhdsiWebApi::authorizeWebApi(
 webApiCohorts <- ROhdsiWebApi::getCohortDefinitionsMetaData(baseUrl = baseUrl)
 studyCohorts <-  webApiCohorts %>%
   dplyr::filter(stringr::str_detect(string = name, 
-                                    pattern = stringr::fixed("[PhePheb2023]"))) %>%
+                                    pattern = stringr::fixed("[P2023]"))) %>%
   dplyr::filter(stringr::str_detect(string = name, 
                                     pattern = stringr::fixed("Dermatomyositis"))) %>%
   dplyr::filter(stringr::str_detect(string = name, 

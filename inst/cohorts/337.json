@@ -803,6 +803,165 @@
       ]},
       "name": "Antibody testing",
       "id": 2
+    },
+    {
+      "expression": {"items": [
+        {
+          "isExcluded": false,
+          "concept": {
+            "INVALID_REASON_CAPTION": "Valid",
+            "CONCEPT_ID": 1594289,
+            "STANDARD_CONCEPT": "C",
+            "CONCEPT_CODE": "1921590",
+            "VOCABULARY_ID": "RxNorm",
+            "CONCEPT_NAME": "methotrexate Oral Liquid Product",
+            "DOMAIN_ID": "Drug",
+            "STANDARD_CONCEPT_CAPTION": "Classification",
+            "CONCEPT_CLASS_ID": "Clinical Dose Group",
+            "INVALID_REASON": "V"
+          },
+          "includeMapped": false,
+          "includeDescendants": true
+        },
+        {
+          "isExcluded": false,
+          "concept": {
+            "INVALID_REASON_CAPTION": "Valid",
+            "CONCEPT_ID": 21603896,
+            "STANDARD_CONCEPT": "C",
+            "CONCEPT_CODE": "L04AA06",
+            "VOCABULARY_ID": "ATC",
+            "CONCEPT_NAME": "mycophenolic acid; systemic",
+            "DOMAIN_ID": "Drug",
+            "STANDARD_CONCEPT_CAPTION": "Classification",
+            "CONCEPT_CLASS_ID": "ATC 5th",
+            "INVALID_REASON": "V"
+          },
+          "includeMapped": false,
+          "includeDescendants": true
+        },
+        {
+          "isExcluded": false,
+          "concept": {
+            "INVALID_REASON_CAPTION": "Valid",
+            "CONCEPT_ID": 36226326,
+            "STANDARD_CONCEPT": "C",
+            "CONCEPT_CODE": "1162236",
+            "VOCABULARY_ID": "RxNorm",
+            "CONCEPT_NAME": "methotrexate Oral Product",
+            "DOMAIN_ID": "Drug",
+            "STANDARD_CONCEPT_CAPTION": "Classification",
+            "CONCEPT_CLASS_ID": "Clinical Dose Group",
+            "INVALID_REASON": "V"
+          },
+          "includeMapped": false,
+          "includeDescendants": true
+        },
+        {
+          "isExcluded": false,
+          "concept": {
+            "INVALID_REASON_CAPTION": "Valid",
+            "CONCEPT_ID": 950637,
+            "STANDARD_CONCEPT": "S",
+            "CONCEPT_CODE": "42316",
+            "VOCABULARY_ID": "RxNorm",
+            "CONCEPT_NAME": "tacrolimus",
+            "DOMAIN_ID": "Drug",
+            "STANDARD_CONCEPT_CAPTION": "Standard",
+            "CONCEPT_CLASS_ID": "Ingredient",
+            "INVALID_REASON": "V"
+          },
+          "includeMapped": false,
+          "includeDescendants": true
+        },
+        {
+          "isExcluded": false,
+          "concept": {
+            "INVALID_REASON_CAPTION": "Valid",
+            "CONCEPT_ID": 36212952,
+            "STANDARD_CONCEPT": "C",
+            "CONCEPT_CODE": "1155001",
+            "VOCABULARY_ID": "RxNorm",
+            "CONCEPT_NAME": "azathioprine Oral Product",
+            "DOMAIN_ID": "Drug",
+            "STANDARD_CONCEPT_CAPTION": "Classification",
+            "CONCEPT_CLASS_ID": "Clinical Dose Group",
+            "INVALID_REASON": "V"
+          },
+          "includeMapped": false,
+          "includeDescendants": true
+        },
+        {
+          "isExcluded": false,
+          "concept": {
+            "INVALID_REASON_CAPTION": "Valid",
+            "CONCEPT_ID": 36226325,
+            "STANDARD_CONCEPT": "C",
+            "CONCEPT_CODE": "1162235",
+            "VOCABULARY_ID": "RxNorm",
+            "CONCEPT_NAME": "methotrexate Injectable Product",
+            "DOMAIN_ID": "Drug",
+            "STANDARD_CONCEPT_CAPTION": "Classification",
+            "CONCEPT_CLASS_ID": "Clinical Dose Group",
+            "INVALID_REASON": "V"
+          },
+          "includeMapped": false,
+          "includeDescendants": true
+        },
+        {
+          "isExcluded": false,
+          "concept": {
+            "INVALID_REASON_CAPTION": "Valid",
+            "CONCEPT_ID": 36212953,
+            "STANDARD_CONCEPT": "C",
+            "CONCEPT_CODE": "1155002",
+            "VOCABULARY_ID": "RxNorm",
+            "CONCEPT_NAME": "azathioprine Pill",
+            "DOMAIN_ID": "Drug",
+            "STANDARD_CONCEPT_CAPTION": "Classification",
+            "CONCEPT_CLASS_ID": "Clinical Dose Group",
+            "INVALID_REASON": "V"
+          },
+          "includeMapped": false,
+          "includeDescendants": true
+        },
+        {
+          "isExcluded": false,
+          "concept": {
+            "INVALID_REASON_CAPTION": "Valid",
+            "CONCEPT_ID": 40220447,
+            "STANDARD_CONCEPT": "S",
+            "CONCEPT_CODE": "1809031",
+            "VOCABULARY_ID": "RxNorm",
+            "CONCEPT_NAME": "immunoglobulin G Injection",
+            "DOMAIN_ID": "Drug",
+            "STANDARD_CONCEPT_CAPTION": "Standard",
+            "CONCEPT_CLASS_ID": "Clinical Drug Form",
+            "INVALID_REASON": "V"
+          },
+          "includeMapped": false,
+          "includeDescendants": true
+        },
+        {
+          "isExcluded": false,
+          "concept": {
+            "INVALID_REASON_CAPTION": "Valid",
+            "CONCEPT_ID": 21603907,
+            "STANDARD_CONCEPT": "C",
+            "CONCEPT_CODE": "L04AB",
+            "VOCABULARY_ID": "ATC",
+            "CONCEPT_NAME": "Tumor necrosis factor alpha (TNF-a) inhibitors",
+            "DOMAIN_ID": "Drug",
+            "STANDARD_CONCEPT_CAPTION": "Classification",
+            "CONCEPT_CLASS_ID": "ATC 4th",
+            "INVALID_REASON": "V"
+          },
+          "includeMapped": false,
+          "includeDescendants": true
+        }
+      ]},
+      "name": "Immunosuppressants or modulators",
+      "id": 3
     }
   ],
   "cdmVersionRange": ">=5.0.0",
@@ -881,6 +1040,72 @@
         "Groups": []
       },
       "name": "Antibody testing"
+    },
+    {
+      "expression": {
+        "CriteriaList": [{
+          "RestrictVisit": false,
+          "StartWindow": {
+            "UseEventEnd": false,
+            "Start": {
+              "Days": 1,
+              "Coeff": 1
+            },
+            "End": {
+              "Days": 365,
+              "Coeff": 1
+            },
+            "UseIndexEnd": false
+          },
+          "IgnoreObservationPeriod": true,
+          "Criteria": {"ConditionOccurrence": {
+            "ConditionTypeExclude": false,
+            "CodesetId": 0
+          }},
+          "Occurrence": {
+            "Type": 2,
+            "IsDistinct": false,
+            "Count": 1
+          }
+        }],
+        "Type": "ALL",
+        "DemographicCriteriaList": [],
+        "Groups": []
+      },
+      "name": "Second Diagnosis of Dermatomyositis within 1 year"
+    },
+    {
+      "expression": {
+        "CriteriaList": [{
+          "RestrictVisit": false,
+          "StartWindow": {
+            "UseEventEnd": false,
+            "Start": {
+              "Days": 365,
+              "Coeff": -1
+            },
+            "End": {
+              "Days": 365,
+              "Coeff": 1
+            },
+            "UseIndexEnd": false
+          },
+          "IgnoreObservationPeriod": false,
+          "Criteria": {"DrugExposure": {
+            "CodesetId": 3,
+            "DrugTypeExclude": false
+          }},
+          "Occurrence": {
+            "Type": 2,
+            "IsDistinct": false,
+            "Count": 1
+          }
+        }],
+        "Type": "ALL",
+        "DemographicCriteriaList": [],
+        "Groups": []
+      },
+      "name": "Immunosuppressants or modulators not including corticosteroids"
     }
   ],
   "PrimaryCriteria": {
